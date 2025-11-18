@@ -14,3 +14,7 @@
 *.conda
 *.egg-info/
 pip-wheel-metadata/
+
+# Pero asegúrate de NO ignorar estos dos dentro de app/data
+!app/data/CV_Nicolas_Rodriguez_Gomez.pdf
+!app/data/resumen_cv.txt
