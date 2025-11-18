@@ -236,6 +236,8 @@ async def chat_endpoint(req: ChatRequest, request: Request):
 
 @app.get("/")
 async def root():
-    return {
-        "message": "Backend del Agente CV está funcionando. Usa POST /chat o visita /docs."
-    }
+    return {"status": "ok", "message": "Agente CV backend up"}
+
+@app.get("/healthz")
+async def healthz():
+    return {"status": "ok"}
