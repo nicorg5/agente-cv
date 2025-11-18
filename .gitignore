@@ -4,10 +4,6 @@
 *.env
 .env.docker.local
 
-# Archivos de datos
-CV_Nicolas_Rodriguez_Gomez.pdf
-resumen_cv.txt
-
 # Datos/archivos sensibles
 *.pdf
 *.docx
