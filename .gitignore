@@ -1,0 +1,20 @@
+# Env files
+.env
+.env.*
+*.env
+.env.docker.local
+
+# Archivos de datos
+CV_Nicolas_Rodriguez_Gomez.pdf
+resumen_cv.txt
+
+# Datos/archivos sensibles
+*.pdf
+*.docx
+*.xlsx
+*.csv
+
+# Conda / caches
+*.conda
+*.egg-info/
+pip-wheel-metadata/

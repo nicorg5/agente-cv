@@ -1,0 +1,36 @@
+name: CI
+
+on:
+  push:
+    branches: [ main, master ]
+  pull_request:
+    branches: [ main, master ]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+          pip install pytest
+
+      - name: Run tests
+        env:
+          # Variables dummy para que importen los módulos sin llamar a la API real
+          GROQ_API_KEY: "dummyu-key"
+          AGENT_MODEL: "openai/gpt-oss-120b"
+          EVAL_MODEL: "llama-3.1-8b-instant"
+          PDF_PATH: "app/data/CV_Nicolas_Rodriguez_Gomez.pdf"
+        run: |
+          pytest -q
